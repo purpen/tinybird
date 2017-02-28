@@ -1,0 +1,20 @@
+.fail{
+	text-align: center;
+	width:670rpx;
+	margin:100rpx 40rpx;
+}
+.title{
+	font-size: 36rpx;
+	color: #222;
+	margin: 40rpx 0 30rpx;
+	display: block;
+}
+.des{
+	font-size: 28rpx;
+	color: #666;
+	display: block;
+	margin-bottom:50rpx;
+}
+.gohome{
+	margin-top: 30rpx;
+}

@@ -1,0 +1,32 @@
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
+        class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" data-page="{{ order.current_page}}" data-totalpage="{{ order.total_page}}">
+	
+	<block wx:for="{{ list }}" wx:key="">
+		<view class="item">
+			<view class="ordertop">
+				<text class="time">{{item.created_at}}</text>
+				<text class="label">{{item.status_label}}</text>
+			</view>
+
+			<view class="content" bindtap="order_view" data-rid="{{item.rid}}">
+				<block wx:for="{{ item.items }}" wx:key="">
+					<view class="flex-item">
+						<image src="{{item.cover_url}}" />
+						<view class="header">
+							<view class="title"> {{item.name}} </view>
+							<view class="mesg">{{item.sku_name}}<text>x {{item.quantity}}</text></view>
+							<view class="price">¥ {{item.price}}</view>
+						</view>
+					</view>
+				</block>
+			</view>
+
+			<view class="product">共{{item.items_count}}件商品  总计：¥{{item.pay_money}}</view>
+			<view class="bottom" wx:if="{{item.status == 1}}">
+				<view class="pay" data-rid="{{item.rid}}" bindtap="payFor">立即支付</view>
+			</view>
+		</view>
+	</block>
+
+
+</scroll-view>

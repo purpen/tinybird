@@ -1,0 +1,88 @@
+w.loginbg{
+	width:750rpx;
+	height:1254rpx;
+	background:url(https://p4.taihuoniao.com/images/wechat/login.jpg) center center /cover;
+	text-align: center;
+}
+.login{
+	padding:65rpx 55rpx 0;
+}
+input{
+	padding:20rpx 30rpx;
+	margin-bottom:30rpx;
+	background-color:#000;
+	color:#999;
+	text-align:left;
+	font-size:28rpx;
+}
+/*.join.btn{
+	padding:20rpx 30rpx;
+	margin-bottom:30rpx;
+	background-color:#000;
+	color:#be8914;
+	height:1.4rem;
+	min-height:1.4rem;
+	line-height:1.4rem;
+	font-size:28rpx;
+}*/
+.section{
+	position: relative;
+}
+.getmsg{
+	position:absolute;
+	top:50%;
+	right:20rpx;
+	font-size:24rpx;
+	color:#be8914;
+	border:2rpx solid #be8914;
+	transform:translateY(-50%);
+	padding:8rpx 0;
+	border-radius:10rpx;
+	z-index:3;
+	line-height:28rpx;
+	background: transparent;
+	min-width:85px;
+}
+.getmsg[disabled]{
+	color: #222 !important;
+	background:#999 !important;
+	border:2rpx solid #999 !important;
+}
+/*.ttoast{
+	position: fixed;
+	top: 0;
+	left: 0;
+	font-size: 26rpx;
+	background:rgba(0,0,0,0.5);
+	width:100%;
+	text-align: center;
+	color: #fff;
+	line-height: 64rpx;
+	padding:0;
+}*/
+.logo{
+	width:260rpx;
+	height:109rpx;
+	margin:120rpx auto 65rpx;
+}
+.other{
+	text-align: center;
+	margin:120rpx 0 0;
+}
+.other text{
+	font-size: 24rpx;
+	color: #666;
+	display: inline-block;
+	padding:0 10rpx;
+}
+.other image{
+	height: 24rpx;
+	width: 24rpx;
+	display: inline-block;
+}
+.wechat{
+	width:96rpx;
+	height: 80rpx;
+	background:url(https://p4.taihuoniao.com/images/wechat/wechat.png) center center /cover;
+	margin:50rpx auto 0;
+}

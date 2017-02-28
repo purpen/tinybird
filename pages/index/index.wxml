@@ -1,0 +1,19 @@
+<loading hidden="{{loadingHidden}}">正在加载...</loading>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" class="banners" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for-items="{{topn}}" wx:key="*this">
+    <swiper-item class="banner">
+      <image src="{{item.cover_url}}" data-title="{{item.title}}" data-type="{{item.type}}" data-id="{{item.web_url}}" bindtap="bindViewTap" class="banner-image" width="100%" height="100%" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="list">
+	<block wx:for-items="{{ plist }}" wx:key="">
+		<view class="item" data-id="{{item._id}}" data-title="{{item.short_title}}" bindtap="bindViewTap">
+			<image class="coverimg" src="{{ item.cover_url }}" />
+			<view class="desc">
+				<view class="h2">{{item.short_title}}</view>
+				<view class="price">¥{{item.sale_price}}</view>
+			</view>
+		</view>
+	</block>
+</view>

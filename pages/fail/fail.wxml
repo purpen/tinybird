@@ -1,0 +1,9 @@
+<view class="fail">
+	<icon type="clear" size="80" />
+	<text class="title">支付失败</text>
+	<text class="des">支付未能完成，您可以再次支付</text>
+
+	<button type="primary" size="default" loading="{{loading}}" plain="{{plain}}" bindtap="payFor"> 再次支付 </button>
+
+	<button class="gohome" type="default" size="default" plain="false" bindtap="goHome"> 回到首页 </button>
+</view>

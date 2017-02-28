@@ -1,0 +1,42 @@
+<view class="addlist">
+	<view class="addmsg">
+		<image class="art-left" src="https://p4.taihuoniao.com/images/wechat/map.png" />
+		<text class="title">收货人：{{address.name}}</text> 
+		<text class="addpro">{{address.province}} {{address.city}} {{address.county}} {{address.town}}</text>
+		<text class="addpro">{{address.address}}</text>
+		<text class="addpro">{{address.phone}}</text>
+	</view>
+</view>
+
+<view class="order">
+	<view class="ordertop">
+		<text class="time">{{allorder.created_at}}</text>
+		<text class="label">{{allorder.status_label}}</text>
+	</view>
+	<block wx:for="{{ allorder.items }}" wx:key="">
+		<view class="flex-item">
+			<image src="{{item.cover_url}}" />
+			<view class="header">
+				<view class="title"> {{item.name}} </view>
+				<view class="mesg">{{item.sku_name}}<text>x {{item.quantity}}</text></view>
+				<view class="price">¥ {{item.price}}</view>
+			</view>
+		</view>
+	</block>
+</view>
+<view class="desitem first">
+	运费： <text>¥ {{allorder.freight}}</text>
+</view>
+<view class="desitem">
+	商品金额： <text>¥ {{allorder.total_money}}</text>
+</view>
+<view class="desitem">
+	优惠金额： <text>¥ {{allorder.discount_money}}</text>
+</view>
+<view class="desitem last">
+	实付金额： <text>¥ {{allorder.pay_money}}</text>
+</view>
+
+<view class="ordertbtn" wx:if="{{allorder.status == 1}}">
+	<view class="pay" bindtap="payFor" >立即支付</view>
+</view>

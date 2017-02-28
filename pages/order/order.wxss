@@ -1,0 +1,119 @@
+.item {
+    margin-bottom: 20rpx;
+    padding: 20rpx 0 0;
+    background: #fff;
+}
+.ordertop {
+    padding: 0 20rpx 10rpx;
+    border-bottom: 2rpx solid rgba(0,0,0,0.1);
+    height: 40rpx;
+}
+.ordertop .time{
+	float: left;
+	color: #666;
+	font-size: 24rpx;
+	line-height:40rpx;
+}
+.ordertop .label{
+	float: right;
+	color: #be8914;
+	font-size: 24rpx;
+	line-height:40rpx;
+}
+.flex-item{
+	display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -webkit-box;
+    align-items: center;
+    -webkit-box-align: center;
+    padding: 20rpx;
+    border-bottom: 2rpx solid rgba(0,0,0,0.1);
+}
+.flex-item image{
+	width: 138rpx;
+    height: 138rpx;
+    position: relative;
+    border: 2rpx solid #eee;
+    vertical-align: middle;
+}
+.header{
+	-webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    flex-grow: 1;
+    position: relative;
+    margin-left: 20rpx;
+}
+.title{
+	margin-bottom: 60rpx;
+    max-height: 56rpx;
+    overflow: hidden;
+    font-size: 26rpx;
+    color: #222;
+    line-height:28rpx;
+}
+.price{
+	color: #be8914;
+    font-size: 28rpx;
+}
+.mesg{
+	font-size: 24rpx;
+    color: #666;
+    position: absolute;
+    width: 498rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    left: 0;
+    top:50%;
+    padding-right:50rpx;
+	transform:translateY(-30%);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.mesg text{
+	position: absolute;
+    top: 0;
+    right: 0;
+	font-size: 24rpx;
+    color: #666;
+    line-height: 40rpx;
+}
+.product{
+	margin: 0;
+    text-align: right;
+    font-size: 24rpx;
+    padding: 20rpx;
+}
+.bottom{
+	text-align: right;
+    padding: 20rpx;
+    border-top: 2rpx solid rgba(0,0,0,0.1);
+}
+.cancel-btn{
+	background: transparent;
+    box-shadow: 0 0 0 1px #333 inset;
+    color: #333;
+    padding: 14rpx 20rpx;
+    margin: 0;
+    margin-left: 16rpx;
+    font-size: 24rpx;
+    border-radius: 8rpx;
+    display: inline-block;
+}
+.pay{
+	background: transparent;
+    box-shadow: 0 0 0 1px #be8914 inset;
+    color: #be8914;
+    padding: 14rpx 20rpx;
+    margin: 0;
+    margin-left: 16rpx;
+    font-size: 24rpx;
+    border-radius: 8rpx;
+    display: inline-block;
+}

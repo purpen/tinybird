@@ -1,0 +1,167 @@
+page{
+	padding-bottom:100rpx;
+}
+.nocart {
+	text-align: center;
+	color: #999;
+	font-size: 28rpx;
+	padding-top:43%;
+}
+.nocart image{
+	width: 145rpx;
+	height: 145rpx;
+	margin: 30rpx auto;
+	display: block;
+}
+.cartlist{
+	padding:30rpx 30rpx 25rpx;
+	margin:0;
+	position:relative;
+	height:150rpx;
+	background:#fff;
+}
+.cartlist + .cartlist{
+	border-top: 2rpx solid rgba(0,0,0,0.1)
+}
+.cartimg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:150rpx;
+	height:150rpx;
+}
+.cartlist .checkbox{
+	position:absolute;
+	top:30rpx;
+	left:30rpx;
+	border-radius:0;
+	width:150rpx;
+	height:150rpx;
+}
+.cartlist .checkbox checkbox{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:2;
+	border-radius:0;
+}
+.cheader{
+	vertical-align: top;
+	display:block;
+	margin-left: 170rpx;
+	margin-right: 80rpx;
+}
+.f-title{
+	color: #222;
+	font-size: 30rpx;
+	line-height: 38rpx;
+	overflow : hidden;
+    height:38rpx;
+    padding-top:2rpx;
+    text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+}
+.price{
+	color:#be8914;
+	font-size:30rpx;
+	display:block;
+	padding-bottom:2rpx;
+	line-height: 30rpx;
+	padding-top:10rpx;
+}
+.smesg{
+	color:#999;
+	font-size:26rpx;
+	display:block;
+	padding:13rpx 0 26rpx;
+	height:30rpx;
+}
+.check{
+	width:150rpx;
+	height:150rpx;
+	position:absolute;
+	left:30rpx;
+	top:30rpx;
+}
+.checkimg{
+	width:40rpx;
+	height:40rpx;
+	position:absolute;
+	left:0;
+	bottom:0;
+}
+.carts-footer{
+	width: 750rpx;
+	height: 80rpx;
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	bottom: 0;
+	left: 0;
+	background: #fff;
+}
+.carts-footer text {
+	font-size: 30rpx;
+	margin-left: 10rpx;
+	line-height: 80rpx;
+}
+.carts-footer .button {
+	line-height: 80rpx;
+	text-align: center;
+	width:220rpx;
+	height: 80rpx;
+	background-color: #be8914;
+	color: white;
+	font-size: 32rpx;
+	border-radius: 0;
+	border: 0;
+}
+.checkall{
+	position: relative;
+	margin-left: 20rpx;
+	width: 40rpx;
+	height: 40rpx;
+	padding-top: 20rpx;
+	vertical-align: top;
+}
+.total{
+	font-size: 30rpx;
+	color: #666;
+	text-align: right;
+	margin-right: 20rpx;
+	line-height: 80rpx;
+	position:absolute;
+	right:240rpx;
+}
+.total text{
+	color: #be8914;
+}
+.cancel{
+	position: absolute;
+	right: 20rpx;
+	top: 20rpx;
+	padding: 20rpx;
+}
+.cancel image{
+	width: 30rpx;
+	height: 30rpx;
+}
+.jd{
+	padding: 20rpx;
+	font-size: 24rpx;
+	color: #666;
+	text-align: center;
+}
+.jdicon{
+	position:absolute;
+	right: 30rpx;
+	bottom: 25rpx;
+	font-size: 20rpx;
+	padding:6rpx 16rpx;
+	border:2rpx solid #999;
+	color: #999;
+}

@@ -1,0 +1,27 @@
+<view class="loginbg">
+	<view class="ttoast" hidden="{{toToast}}">{{hintMsg}}</view>
+	<image src="https://p4.taihuoniao.com/images/wechat/fiu.png" class="logo" />
+
+	<view class="login">
+		<view class="section">
+			<input bindinput="input_phoneNum" placeholder="手机号" type="number"/>
+		</view>
+		<view class="section">
+			<input bindinput="input_identifyCode" placeholder="动态密码" type="number" />
+			<button class="getmsg" bindtap="getMsg" type="default" disabled="{{disAbled}}" >{{messge}}</button>
+		</view>
+		<view class="section">
+			<view class="join black btn" bindtap="fastLogin">
+				登录
+			</view>
+		</view>
+	</view>
+	<view class="other">
+		<image src="https://p4.taihuoniao.com/images/wechat/loginicon.png" />
+		<text>
+			通过其他方式快速登录
+		</text>
+		<view class="wechat" bindtap="wxLogin"></view>
+	</view>
+
+</view>

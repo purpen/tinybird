@@ -1,0 +1,51 @@
+<view class="nowby">
+	<view class="noadd" bindtap="addRess" wx:if="{{ noaddress == true}}">
+		+ 请选择收货地址
+	</view>
+	<view class="addlist" bindtap="addRess" wx:else>
+		<view class="addmsg">
+			<image class="art-left" src="https://p4.taihuoniao.com/images/wechat/map.png" />
+			<text class="title">{{ addName}}</text> 
+			<text class="addpro">{{addProvince}} {{addCity}} {{addArea}} {{addTown}}</text>
+			<text class="addpro">{{addHome}}</text>
+			<text class="addpro">{{addPhone}}</text>
+			<image class="art-rigth" src="https://p4.taihuoniao.com/images/wechat/arrowright.png" />
+		</view>
+	</view>
+	
+	<view class="shoplist section">
+		<block wx:for="{{ buyinfo }}" wx:key="">
+			<view class="buylist">
+				<image class="skuimg" src="{{item.cover}}" />
+				<view class="header">
+					<view class="title"> {{item.title}} </view>
+					<view class="mesg">{{item.sku_mode}}<text>x {{item.quantity}}</text></view>
+					<view class="price">¥ {{item.price}}</view>
+				</view>
+			</view>
+		</block>
+	</view>
+
+	<view class="section text">
+		运 费：<text>¥ {{freight}}</text>
+	</view>
+	<view class="section text">
+		<picker bindchange="bindTimeChange" value="{{index}}" range="{{timedata}}">
+		    <view class="picker">
+		      送货时间： <text>{{timedata[index]}}</text>
+		    </view>
+		</picker>
+	</view>
+	<view class="section text" style="padding:19rpx 30rpx;">
+		<view class="view">备注:</view> <input bindinput="addSummary" placeholder="请输入备注" type="text"/>
+	</view>
+
+	<view class="btnfix weui-flex">
+		<view class="weui-flex-item two">
+			<view class="topbar-item">合计: <text>¥ {{ pay_money}}</text></view>
+		</view>
+		<view class="weui-flex-item">
+			<view class="topbar-item payfor" bindtap="payFor">支付订单</view>
+		</view>
+	</view>
+</view>

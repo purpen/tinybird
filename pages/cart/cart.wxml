@@ -1,0 +1,47 @@
+<view class="nocart" wx:if="{{ cartCount ==0 }}">
+	<image src="https://p4.taihuoniao.com/images/wechat/nocart.png" />
+	<text>你的购物车里还没有产品!</text>
+	<view class="pub-btn" bindtap="goHome">去逛逛</view>
+</view>
+<view class="hascart" wx:else>
+	<view class="jd" hidden="{{ jd == true }}">由京东配货的商品需要单独结算</view>
+	<block wx:for="{{ cartItem }}" wx:key="">
+		<view class="cartlist" hidden="{{ cartItem[index] == '' }}">
+			<view class="check" bindtap="checkImg" data-index="{{index}}" data-id="{{ item.target_id }}" data-n="{{item.n}}">
+				<image src="{{ item.cover }}" class="cartimg" />
+				<image class="checkimg" src="https://p4.taihuoniao.com/images/wechat/check.png" wx:if="{{ item.selected == !true }}" />
+				<image class="checkimg" src="https://p4.taihuoniao.com/images/wechat/checked.png" wx:else />
+			</view>
+			<view class="cheader">
+				<view class="f-title">
+					{{item.title}}
+				</view>
+				<text class="smesg">颜色／分类：{{ item.sku_mode}}  数量 * {{item.n}}</text>
+				<text class="price">¥ {{item.total_price }}</text>
+				<view class="cancel" bindtap="close" data-id="{{item.target_id}}" data-price="{{item.total_price}}" data-index="{{index}}">
+					<image src="https://p4.taihuoniao.com/images/wechat/cancel.png" />
+				</view>
+				<view class="jdicon" wx:if="{{item.vop_id !== '' }}">京东配货</view>
+
+				<!-- <view class="stepper"> 
+					
+					<text class="{{item.n <= 1 ? 'disabled':'normal' }}" data-index="{{index}}" bindtap="bindMinus">-</text> 
+					<input type="number" bindchange="bindManual" disabled="true" value="{{item.n}}" /> 
+					
+					<text class="normal" data-index="{{index}}" bindtap="bindPlus">+</text> 
+				</view> -->
+			</view>
+			
+		</view>
+	</block>
+
+	<view class="carts-footer"> 
+		<view bindtap="bindSelectAll"> 
+			<image class="checkall" src="https://p4.taihuoniao.com/images/wechat/checked.png" wx:if="{{selectedAllStatus}}" />
+			<image class="checkall" src="https://p4.taihuoniao.com/images/wechat/check.png" wx:else />
+			<text>全选</text>
+		</view> 
+		<view class="total">合计： <text>¥{{ total }}</text></view>
+		<view class="button" bindtap="buyArr">立即结算</view> 
+	</view>
+</view>

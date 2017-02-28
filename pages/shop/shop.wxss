@@ -1,0 +1,17 @@
+.cateimg{
+	width:750rpx;
+	height:260rpx;
+	position: relative;
+	background-size: cover;
+}
+.cateimg text{
+	width:750rpx;
+	text-align: center;
+	color: #fff;
+	font-size: 36rpx;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translate3d(0,-50%,0);
+}

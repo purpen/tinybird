@@ -1,0 +1,63 @@
+/* page/my/my.wxss */
+.mytop {
+    padding: 0;
+    width: 750rpx;
+    height: 300rpx;
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -webkit-box;
+    align-items: center;
+    -webkit-box-align: center;
+    background: url(https://p4.taihuoniao.com/images/wechat/ovalll.jpg);
+    background-size: 100% 100%;
+    color: #fff;
+    position: relative;
+    text-align: center;
+}
+.user{
+	text-align: center;
+	position: relative;
+	width:750rpx;
+}
+.user image{
+	width:100rpx;
+	height:100rpx;
+	display:block;
+	margin:0 auto 24rpx;
+	border-radius:50%;
+	border:4rpx solid #fff;
+	text-align:center;
+}
+.user text{
+	font-size: 32rpx
+}
+.flex-wrp {
+    padding-top: 0;
+    margin-top: 20rpx;
+    flex-direction:column;
+}
+.flex-item{
+	background:#fff;
+	padding: 30rpx;
+	font-size: 28rpx;
+	color: #666;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	position: relative;
+}
+.flex-item image{
+	position:absolute;
+	width:26rpx;
+	height:26rpx;
+	right:30rpx;
+	top:50%;
+	transform:translateY(-50%);
+}
+.flex-item text{
+	font-size: 20rpx;
+	position:absolute;
+	right:60rpx;
+	top:50%;
+	transform:translateY(-50%);
+	color: #999;
+}

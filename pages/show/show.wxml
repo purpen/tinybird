@@ -1,0 +1,114 @@
+<import src="../../src/wetoast.wxml"/>
+<view class="container">
+	<view class="tapbar weui-flex">
+		<!-- <view class="weui-flex-item">
+			<view class="topbar-item">好货</view>
+		</view>
+		<view class="weui-flex-item">
+			<view class="topbar-item">好货详情</view>
+		</view>
+		<view class="weui-flex-item">
+			<view class="topbar-item">评价</view>
+		</view> -->
+		<block wx:for="{{ navList }}" wx:key="">
+	        <view data-type="{{ item._id }}" data-index="{{ index }}" class="weui-flex-item" catchtap="onTapTag">
+	        	<view class="topbar-item {{ index == activeIndex ? 'active' : '' }}">{{ item }}</view>
+	        </view>
+	    </block>
+	</view>
+
+    <view class="art-header tapview" hidden="{{ activeIndex !== 0}}">
+    	<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" class="banners" interval="{{interval}}" duration="{{duration}}" wx:if="{{ list.length > 1 }}">
+		  <block wx:for-items="{{list}}" wx:key="*this">
+		    <swiper-item class="banner">
+		      <image src="{{item}}" class="banner-image" />
+		    </swiper-item>
+		  </block>
+		</swiper>
+		<!-- 一张图不执行swiper -->
+		<image class="art-img" src="{{art.asset}}" wx:elif="{{ list.length < 2 }}"/>
+		<view class="art-all" data-type="{{1}}" data-index="{{1}}" catchtap="onTapTag">
+			<view class="art-title">{{art.title}}</view>
+	        <view class="art-price">{{"¥"+art.sale_price}}</view>
+	        <text class="art-view">详情介绍</text>
+	        <image class="art-right" src="https://p4.taihuoniao.com/images/wechat/arrowright.png" />
+	    </view>
+
+	    <view class="point">
+			<text class="title">产品亮点</text>
+			<text class="descrite">{{art.advantage}}</text>
+	    </view>
+	</view>
+	<view class="tapview" hidden="{{ activeIndex !== 1}}">
+		<block wx:for="{{ viewimg }}" wx:key="">
+			<image src="{{ item }}" style="width:750rpx;display: block" mode="widthFix" />
+		</block>
+	</view>
+	<view class="tapview" hidden="{{ activeIndex !== 2}}">
+		<view class="brand" wx:if="{{ brdata !== '' }}">
+			<view class="bantop">
+				<image class="banner" src="{{ brdata.banner_url }}" />
+				<view class="bg"></view>
+				<image class="logo" src="{{ brdata.cover_url}}" />
+			</view>
+			<text class="title text-c mlr-3r">{{ brdata.title }}</text>
+			<text class="descrite text-c mlr-3r">{{ brdata.content }}</text>
+		</view>
+
+		<text wx:else> 暂无品牌 </text>
+	</view>
+	
+	<view class="art-bot weui-flex">
+		<view class="weui-flex-item cart" bindtap="goCart">
+			<image src="https://p4.taihuoniao.com/images/wechat/cart.png" />
+			<view class="text" hidden="{{ Cartnum == '' }}">{{ Cartnum }}</view>
+		</view>
+		<view class="weui-flex-item joinbtn" bindtap="modalCartTap">
+			加入购物车
+		</view>
+		<view class="weui-flex-item gobuy" bindtap="modalBuyTap">
+			立即购买
+		</view>
+	</view>
+	
+	<view class="buybg" hidden="{{ modelCard == false }}"></view>
+	<view class="buycard {{ modelCard == true ? 'active':'' }}">
+		<view class="f-top" bindtap="modalChange"></view>
+		<view class="fromes">
+			<view class="f-header">
+				<image class="skuimg" src="{{ art.cover_url }}" />
+				<view class="f-price">
+					<view class="f-title">{{ art.title }}</view>
+					<text class="price"> ¥ {{skuPrice}}</text>
+					<text class="smesg">已选：{{ skuChose }}</text>
+				</view>
+			</view>
+			<view class="art_close" bindtap="modalChange">
+				<image class="close" src="https://p4.taihuoniao.com/images/wechat/close.png"/>
+			</view>
+			<view class="sku-list">
+				<text class="ui header">颜色分类</text>
+				<view class="sku-name">
+					<block wx:for-items="{{skulist}}" wx:key="">
+						<view class="fiu-btn {{skuActive== item._id && item.quantity !== 0  ?'active':''}} {{ item.quantity == 0 ? 'nobtn':'' }}" data-id="{{item._id}}" data-price="{{item.price}}" data-quantity="{{item.quantity}}" data-sku="{{item.mode}}" bindtap="{{ item.quantity == 0 ? '':'skuClick'}}"> {{item.mode}} </view>
+					</block>
+				</view>
+			</view>
+			<view class="sku-num">
+				<text class="ui header">数量</text>
+				<view class="numset">
+					<view class="numminus {{ inputValue <= '1' ? 'active' : '' }}" bindtap="{{ inputValue <='1'? '': 'numMinus' }}" data-add="{{inputValue}}">-</view>
+					<input class="sku-shu" type="number" value="{{ inputValue }}" bindinput="bindKeyInput" />
+					<!-- bindblur="{{ inputValue > inventory ? 'toastUp':'' }}" -->
+				    <view class="numadd {{inputValue == inventory ? 'active' : ''}}" bindtap="numAdd" data-add="{{inputValue}}" data-inventory="{{ inventory }}">+</view>
+				</view>
+			</view>
+			<view class="">
+				
+			</view>
+			<view class="bottom-btn btnfix" data-id="{{ skuActive }}" data-num="{{ inputValue }}" data-buyarr="false" bindtap="{{ modelCart == true ? 'Catadd':'Gobuy'}}">
+				确定
+			</view>
+		</view>
+	</view>
+</view>

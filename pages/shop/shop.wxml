@@ -1,0 +1,7 @@
+<view class="cate">
+	<block wx:for-items="{{ catelist }}" wx:key="">
+		<view class="cateimg" style="background-image:url({{ item.app_cover_url }})" data-id="{{item._id}}" data-title="{{ item.title }}" bindtap="golist">
+			<text>{{item.title}}</text>
+		</view>
+	</block>
+</view>

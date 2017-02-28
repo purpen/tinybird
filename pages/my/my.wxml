@@ -1,0 +1,24 @@
+<view class="my" hidden="{{ isLogin !== true }}">
+	<view class="mytop">
+		<view class="user">
+			<image src="{{ avatar_url }}" />
+			<text>{{ nickname }}</text>
+		</view>
+	</view>
+	
+	<view class="flex-wrp">
+		<view class="flex-item" bindtap="order">
+			我的订单
+			<text>查看全部订单</text>
+			<image src="https://p4.taihuoniao.com/images/wechat/arrowright.png" />
+		</view>
+		<view class="flex-item" bindtap="address">
+			收货地址
+			<image src="https://p4.taihuoniao.com/images/wechat/arrowright.png" />
+		</view>
+		<view class="flex-item" bindtap="phone">
+			联系客服
+			<image src="https://p4.taihuoniao.com/images/wechat/arrowright.png" />
+		</view>
+	</view>
+</view>

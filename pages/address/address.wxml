@@ -1,0 +1,93 @@
+<view class="ttoast" hidden="{{toToast}}">{{hintMsg}}</view>
+<view class="address" >
+	<view class="allress" hidden="{{ addTo == true }}">
+		<view class="noress" hidden="{{ noaddress == false }}">
+			<image src="https://p4.taihuoniao.com/images/wechat/address.png" />
+			<text>完善收货地址，您的好货才能快速送达哦～</text>
+		</view>
+		<view class="addall" hidden="{{ noaddress == true }}">
+			<block wx:for="{{ addlist }}" wx:key="">
+				<view class="addlist section">
+					<view class="addmsg" data-id="{{item._id}}" data-name="{{item.name}}" data-province="{{item.province}}" data-city="{{item.city}}" data-county="{{item.county}}" data-town="{{item.town}}" data-address="{{item.address}}" data-phone="{{item.phone}}" bindtap="{{ rid== '' ? '': 'Rid'}}">
+						<text class="title">{{item.name}}</text> <!-- <text class="default" wx:if="{{ item.is_default ==1 }}">默认地址</text> -->
+						<text class="addpro">{{item.province}} {{item.city}} {{item.county}} {{item.town}}</text>
+						<text class="addpro">{{item.address}}</text>
+						<text class="addpro">{{item.phone}}</text>
+						<image class="art-rigth" wx:if="{{rid !== ''}}" src="https://p4.taihuoniao.com/images/wechat/arrowright.png" />
+					</view>
+					<view class="addaction">
+						<image  wx:if="{{ item.is_default ==1 }}" class="is_default" src="https://p4.taihuoniao.com/images/wechat/is_default2.png" />
+						<view class="revise">
+							<view class="addedit" data-id="{{item._id}}" data-name="{{item.name}}" data-province="{{item.province_id}}" data-city="{{item.city_id}}" data-county="{{item.county_id}}" data-town="{{item.town_id}}" data-address="{{item.address}}" data-phone="{{item.phone}}" data-default="{{item.is_default}}" data-zip="{{item.zip}}" bindtap="addEdit"><image src="https://p4.taihuoniao.com/images/wechat/edit.png" />编辑</view>
+							<view class="addedit" data-id="{{item._id}}" bindtap="addDel"><image src="https://p4.taihuoniao.com/images/wechat/cancel.png" />删除</view>
+						</view>
+					</view>
+				</view>
+
+			</block>
+
+		</view>
+		<view class="addfix btnfix" bindtap="addRess">
+			+ 添加新地址
+		</view>
+	</view>
+	
+</view>
+<view class="addfrom" hidden="{{ addTo !== true }}">
+	<view class="section">
+		<input bindinput="addName" placeholder="姓名" value="{{ addName }}" type="text"/>
+	</view>
+	<view class="section">
+		<input bindinput="addPhone" placeholder="联系电话" value="{{ addPhone }}" type="number"/>
+	</view>
+	<view class="section">
+		<input bindinput="addZip" placeholder="邮编" value="{{ addZip }}" type="number"/>
+	</view>
+	<view class="section">
+	 	<picker bindchange="bindProvince" value="{{index}}" range="{{province}}">
+		    <view class="picker">
+		      选择省份：{{province[index]}}
+		    </view>
+		</picker>
+	</view>
+	<view class="section">
+		<picker bindchange="bindCity" value="{{cindex}}" range="{{city}}">
+		    <view class="picker">
+		      当前城市：{{city[cindex]}}
+		    </view>
+		</picker>
+	</view>
+	<view class="section">
+		<picker bindchange="bindArea" value="{{aindex}}" range="{{area}}">
+		    <view class="picker">
+		      当前地区：{{area[aindex]}}
+		    </view>
+		</picker>
+	</view>
+	<view class="section">
+		<picker bindchange="bindTown" value="{{tindex}}" range="{{town}}">
+		    <view class="picker">
+		      当前城镇：{{town[tindex]}}
+		    </view>
+		</picker>
+	</view>
+	<view class="section">
+		<input bindinput="addHome" placeholder="详细地址" value="{{addHome}}" type="text"/>
+	</view>
+	<view class="defalut">
+		<text>设置为默认地址</text>
+		 <switch bindchange="switchChange" checked="{{ is_switch }}" color="#be8914"/>
+	</view>
+	<view class="tapbar weui-flex bottom-btn btnfix">
+		<view class="weui-flex-item">
+			<view class="topbar-item canse" bindtap="Canse">
+				取消
+			</view>
+		</view>
+		<view class="weui-flex-item">
+			<view class="topbar-item submit" bindtap="addSubmit">
+				提交
+			</view>
+		</view>
+	</view>
+</view>

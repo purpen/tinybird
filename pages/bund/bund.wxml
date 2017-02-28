@@ -1,0 +1,23 @@
+<view class="loginbg">
+	<view class="ttoast" hidden="{{toToast}}">{{hintMsg}}</view>
+	<view class="jionbtn" wx:if="{{ bundOk==true }}">
+		<text class="title">首次加入太火鸟</text>
+		<view class="join btn" bindtap="loginIn">立即登录</view>
+		<text class="bund" bindtap="bundUp">绑定已有太火鸟帐号  <text class="bundok">立即绑定</text></text>
+	</view>
+
+	<view class="bundbtn" wx:else>
+		<text class="bund" bindtap="bundDown">跳过绑定  <text class="bundok">立即登录</text></text>
+		<view class="section">
+			<input bindinput="input_phoneNum" placeholder="手机号" type="digit"/>
+		</view>
+		<view class="section">
+			<input bindinput="input_identifyCode" placeholder="密码" password type="text" />
+		</view>
+		<view class="section">
+			<view class="join black btn" bindtap="bundLogin">
+				立即绑定
+			</view>
+		</view>
+	</view>
+</view>

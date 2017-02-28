@@ -1,0 +1,44 @@
+.loginbg{
+	width:750rpx;
+	height:1254rpx;
+	background:url(https://p4.taihuoniao.com/images/wechat/login.jpg) center center /cover;
+	text-align: center;
+}
+.jionbtn{
+	display:block;
+	padding:0 100rpx;
+	text-align:center;
+}
+.bund{
+	padding:25rpx 0;
+	color:#999;
+	font-size:24rpx;
+	display:block;
+	margin:25rpx 0;
+}
+.bund .bundok{
+	color: #be8914;
+	text-decoration:underline;
+	padding:0 10rpx;
+}
+.title{
+	color: #fff;
+	font-size: 24rpx;
+	display: inline-block;
+	margin:400rpx 0 80rpx;
+}
+
+input{
+	padding:20rpx 30rpx;
+	margin-bottom:30rpx;
+	background-color:#000;
+	color:#999;
+	text-align:left;
+	font-size:28rpx;
+}
+.section{
+	position: relative;
+}
+.bundbtn{
+	padding:300rpx 55rpx;
+}

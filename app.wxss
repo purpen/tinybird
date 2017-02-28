@@ -1,0 +1,113 @@
+/**app.wxss**/
+page{
+	background-color: #fbf9fe;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0;
+  box-sizing: border-box;
+} 
+.ttoast{
+	position: fixed;
+	top: 0;
+	left: 0;
+	font-size: 26rpx;
+	background:rgba(0,0,0,0.5);
+	width:100%;
+	text-align: center;
+	color: #fff;
+	line-height: 64rpx;
+	padding:0;
+	z-index:2;
+}
+.loginbg{
+	width:750rpx;
+	height:1254rpx;
+	background:url(https://p4.taihuoniao.com/images/wechat/login.jpg) center center /cover;
+	text-align: center;
+}
+.join.btn{
+	padding:20rpx 30rpx;
+	margin-bottom:30rpx;
+	background-color:#000;
+	color:#be8914;
+	height:1.4rem;
+	min-height:1.4rem;
+	line-height:1.4rem;
+	font-size:28rpx;
+}
+.banners {
+  width: 750rpx;
+  height: 422rpx;
+}
+.banner{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+}
+.banner-image{
+  width: 100%;
+  height: 100%;
+}
+.weui-flex {
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+}
+.weui-flex-item {
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+	flex:1;
+}
+.weui-flex-item.two {
+	-webkit-box-flex:2;
+	-webkit-flex:2;
+	flex:2;
+}
+.topbar-item {
+	color:#666;
+	text-align:center;
+	/*padding:26rpx 0;*/
+	line-height:80rpx;
+	font-size:28rpx;
+}
+.topbar-item.active{
+	color:#be8914;
+}
+.text-c{
+	text-align:center;
+}
+.mlr-3r{
+	margin:0 30rpx;
+}
+.bottom-btn{
+	width:750rpx;
+	height:88rpx;
+	background:#000;
+	color:#fff;
+	font-size:32rpx;
+	text-align:center;
+	line-height:88rpx;
+}
+.btnfix{
+	position:fixed;
+	bottom:0;
+	left:0;
+	z-index:2;
+}
+.pub-btn{
+	background: #000;
+	color:#fff;
+	width: 300rpx;
+	height: 88rpx;
+	line-height: 88rpx;
+	font-size: 34rpx;
+	text-align: center;
+	margin:40rpx auto 0;
+	border-radius:8rpx;
+}
+

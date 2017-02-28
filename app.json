@@ -1,0 +1,58 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/shop/shop",
+    "pages/cart/cart",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/bund/bund",
+    "pages/show/show",
+    "pages/nowbuy/nowbuy",
+    "pages/address/address",
+    "pages/fail/fail",
+    "pages/order/order",
+    "pages/order_view/order_view",
+    "pages/list/list"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "Fiu店",
+    "backgroundColor": "#fbf9fe",
+    "navigationBarBackgroundColor": "#000",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#be8914",
+    "backgroundColor": "#000",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "image/index.png",
+      "selectedIconPath": "image/indexHL.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/shop/shop",
+      "iconPath": "image/cover.png",
+      "selectedIconPath": "image/coverHL.png",
+      "text": "好货"
+    }, {
+      "pagePath": "pages/cart/cart",
+      "iconPath": "image/shop.png",
+      "selectedIconPath": "image/shopHL.png",
+      "text": "购物车"
+    }, {
+      "pagePath": "pages/my/my",
+      "iconPath": "image/my.png",
+      "selectedIconPath": "image/myHL.png",
+      "text": "个人"
+    }]
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

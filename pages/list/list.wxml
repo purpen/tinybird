@@ -1,0 +1,25 @@
+<scroll-view class="flex-cate" scroll-x="true" style="width: 100%" scorll-left="{{ scrollleft }}">
+	<block wx:for-items="{{ catelist }}" wx:key="">
+		<view class="flex-citem {{ category_id == item._id? 'active':''  }}" data-id="{{item._id}}" data-title="{{ item.title }}" bindtap="golist">{{item.title}}</view>
+	</block>
+</scroll-view>
+<view class="flex-top">
+    <view class="flex-item {{ general == true?'active':'' }}" bindtap="general">综合</view>
+    <view class="flex-item {{ new == true?'active':'' }}" bindtap="new">最新</view>
+    <view class="flex-item {{sort =='' ? 'kong':''}} {{ sort == 6 ?'down':'up'}} {{ price == true?'active':'' }}" data-sort="{{ sort }}" bindtap="price">价格
+	<view class="togprice"></view>
+    </view>
+</view>
+
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
+        class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" data-page="{{ order.current_page}}" data-totalpage="{{ order.total_page}}" data-sort="{{sort}}">
+	<block wx:for-items="{{ list }}" wx:key="">
+		<view class="item" data-id="{{item._id}}" data-title="{{item.short_title}}" bindtap="bindViewTap">
+			<image class="coverimg" src="{{ item.cover_url }}" />
+			<view class="desc">
+				<view class="h2">{{item.short_title}}</view>
+				<view class="price">¥{{item.sale_price}}</view>
+			</view>
+		</view>
+	</block>
+</scroll-view>
